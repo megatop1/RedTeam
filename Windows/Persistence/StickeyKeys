@@ -1,0 +1,5 @@
+framework.sessions.each_pair do |sid, session|
+  run_single("use post/windows/manage/sticky_keys")
+  run_single("set SESSION #{sid}")
+  run_single("run")
+end
