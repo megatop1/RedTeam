@@ -22,7 +22,7 @@ sudo dotnet run
 
 # Install PowerShell Empire 
 sudo git clone https://github.com/BC-SECURITY/Empire.git
-cd /opt/Empire
+cd /opt/Empire/setup
 ./install.sh
 
 
