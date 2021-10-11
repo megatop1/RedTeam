@@ -2,8 +2,8 @@
 cd /opt
 
 # Install Evil-WinRM
-sudo gem install winrm winrm-fs stringio
-git clone https://github.com/Hackplayers/evil-winrm.git
+sudo gem install evil-winrm
+sudo git clone https://github.com/Hackplayers/evil-winrm.git
 
 # Install Covenant C2
 git clone --recurse-submodules https://github.com/cobbr/Covenant
