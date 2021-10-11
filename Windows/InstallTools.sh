@@ -20,6 +20,12 @@ sudo apt-get -y install dotnet-sdk-3.1
 cd Covenant/Covenant
 sudo dotnet run
 
+# Install PowerShell Empire 
+sudo git clone https://github.com/BC-SECURITY/Empire.git
+cd /opt/Empire
+./install.sh
+
+
 # The below tools are used to encrypt files to stage our shellcode onto enemy team's systems. Also known as cryptors
 
 # Install Unicorn
