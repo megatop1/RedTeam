@@ -34,4 +34,4 @@ sudo git clone https://github.com/trustedsec/unicorn.git
 # Install Shellter 
 sudo apt -y install wine
 sudo apt-get -y install shellter
-dpkg --add-architecture i386
+sudo dpkg --add-architecture i386
