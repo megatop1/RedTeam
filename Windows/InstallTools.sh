@@ -32,4 +32,5 @@ sudo ./install.sh
 sudo git clone https://github.com/trustedsec/unicorn.git
 
 # Install Shellter 
+sudo apt -y install wine
 sudo apt-get -y install shellter
