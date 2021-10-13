@@ -32,4 +32,4 @@ sudo ./install.sh
 sudo git clone https://github.com/trustedsec/unicorn.git
 
 # Install Shellter 
-sudo apt-get install shellter
+sudo apt-get -y install shellter
