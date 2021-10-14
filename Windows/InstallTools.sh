@@ -2,7 +2,7 @@
 cd /opt
 
 # Install Evil-WinRM
-sudo gem install evil-winrm
+sudo gem install evil-winrm winrm-fs
 
 # Install Covenant C2
 sudo git clone --recurse-submodules https://github.com/cobbr/Covenant
