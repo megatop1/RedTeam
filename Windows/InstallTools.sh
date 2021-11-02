@@ -21,9 +21,7 @@ sudo apt-get -y install dotnet-sdk-3.1
 #sudo dotnet run
 
 # Install PowerShell Empire 
-sudo git clone https://github.com/BC-SECURITY/Empire.git
-cd /opt/Empire/setup
-sudo ./install.sh
+sudo apt install -y powershell-empire
 
 
 # The below tools are used to encrypt files to stage our shellcode onto enemy team's systems. Also known as cryptors
