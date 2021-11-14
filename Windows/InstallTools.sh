@@ -16,10 +16,6 @@ sudo apt-get install apt-transport-https
 sudo apt-get update
 sudo apt-get -y install dotnet-sdk-3.1
 
-# Start Covenant
-#cd Covenant/Covenant
-#sudo dotnet run
-
 # Install PowerShell Empire 
 sudo apt install -y powershell-empire
 
@@ -32,3 +28,7 @@ sudo git clone https://github.com/trustedsec/unicorn.git
 # Install Shellter 
 sudo apt-get -y install shellter
 sudo dpkg --add-architecture i386 && sudo apt-get -y update && sudo apt-get -y install wine32
+
+# Start Covenant
+cd Covenant/Covenant
+sudo dotnet run
