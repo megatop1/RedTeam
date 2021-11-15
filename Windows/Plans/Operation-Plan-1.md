@@ -24,6 +24,7 @@ Once we gain inital access into a windows system, we need to accomplish some tas
 ### Persistance
 
 ###### WMI
+The WMI service accesses data using the Common Information Model (CIM). Not only does this store information about the system's hardware and software, it also tracks the current state of the system, including its running processes and services. Administrators can use WMI to to query the state of the system and its processes. WMI can also be used to control the system; for example, it can be used to start and stop processes. WMI allows administrators to define events that are fired up when a define state occurs on the system; and consumers, which are 
 
 ###### Autoruns
 
