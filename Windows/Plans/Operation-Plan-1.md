@@ -13,9 +13,13 @@ If we are unable to exploit our way into the system, then we will have to resort
 
 ## Post Exploitation
 Once we gain inital access into a windows system, we need to accomplish some tasks. 
-1. Gain user account hashes for offline cracking later. This can easily be done in metasploit
-2. Kerberoasting: Extracts service account credential hashes from Active Directory for offline cracking
-3. Disable certain logs so you can complete your operation. Ensure to start those logs back up after the operation and clear the log saying the service was started/stopped in order for us to keep complete stealth
+1. Disable certain logs so you can complete your operation. Ensure to start those logs back up after the operation and clear the log saying the service was started/stopped in order for us to keep complete stealth
+2. Identify the AD domain
+3. Get information about the OS (version, patch level ex: SP1, etc)
+4. Extract users and domain users and their corresponding groups
+5. Determine is there are any online users
+6. Gain user account hashes for offline cracking later. This can easily be done in metasploit
+7. Kerberoasting: Extracts service account credential hashes from Active Directory for offline cracking
 
 ### Persistance
 
