@@ -88,3 +88,7 @@ Set-GPRegistryValue -name "PrintNightmare2" -key "HKEY_LOCAL_MACHINE\Software\Po
 New-GPLink -name "PrintNightmare2" -Target $target -LinkEnabled Yes 
 
 # Disable Scored Services if Team is losing (RDP, SMB, PSEXEC, etc)
+#Disable Firewall Service (Requires Reboot)
+New-GPO -name "DisableRDP" -domain $domainName
+Set-GPRegistryValue -name "DisableDRDP" -domain $domainName -key "HKLM\SYSTEM\CurrentControlSet\Services\Terminal Server" -ValueName "fDenyTSConnections" -Type DWORD -Value 1
+New-GPLink -name "DisableRDP" -Target $target -LinkEnabled Yes 
