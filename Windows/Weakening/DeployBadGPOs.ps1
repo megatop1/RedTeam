@@ -38,16 +38,12 @@ $word4 = $domainArray[3]
 $target = "dc=$word1,dc=$word2,dc=$word3,dc=$word4"
 }
 
-# GPO1: Disable Host/Client Firewall
-New-GPO -name "DisableHostFirewall" -domain $domainName
-Set-GPRegistryValue -name "DisableHostFirewall" -domain $domainName -key "HKLM\System\CurrentlControlSet\Services\SharedAccess\Parameters\FirewallPolicy\StandProfile" -ValueName "EnableFirewall" -Type DWORD -Value 0
-New-GPLink -name "DisableHostFirewall" -Target $target -LinkEnabled Yes 
+#Disable Firewall Service (Requires Reboot)
+New-GPO -name "DisableFirewall" -domain $domainName
+Set-GPRegistryValue -name "DisableDomainFirewall" -domain $domainName -key "HKLM\SYSTEM\CurrentControlSet\Services\mpssvc" -ValueName "Start" -Type DWORD -Value 4
+New-GPLink -name "DisableFirewall" -Target $target -LinkEnabled Yes 
 
-# GPO2: Disable Domain Firewall
-New-GPO -name "DisableDomainFirewall" -domain $domainName
-Set-GPRegistryValue -name "DisableDomainFirewall" -domain $domainName -key "HKLM\System\CurrentlControlSet\Services\SharedAccess\Parameters\FirewallPolicy\DomainProfile" -ValueName "EnableFirewall" -Type DWORD -Value 0
-
-# GPO3: Enable SMB1 Accross the domain and disable SMB2 and SMB3
+# GPO3: Enable SMB1 Accross the domain and disable SMB2 and SMB3 (Requires reboot)
 New-GPO -name "EnableSMB1" -domain $domainName
 Set-GPRegistryValue -name "EnableSMB1" -key "HKLM\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters" -ValueName "SMB1" -Type DWORD -Value 1
 New-GPLink -name "EnableSMB1" -Target $target -LinkEnabled Yes 
