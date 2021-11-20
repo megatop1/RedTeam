@@ -48,17 +48,11 @@ New-GPO -name "EnableSMB1" -domain $domainName
 Set-GPRegistryValue -name "EnableSMB1" -key "HKLM\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters" -ValueName "SMB1" -Type DWORD -Value 1
 New-GPLink -name "EnableSMB1" -Target $target -LinkEnabled Yes 
 
-# Enable Guest Account
-
-# Add guest account to domain admin
-
 # Enable Windows to Store LAN Manager Hash
 
 # Enable Print-Spooler Service
 
 # Disable Windows Defender
-
-# Disable Services such as firewall, 
 
 # Dont require kerberos for account authentication
 
@@ -72,3 +66,5 @@ New-GPLink -name "EnableSMB1" -Target $target -LinkEnabled Yes
 HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows NT\Printers\PointAndPrint
     RestrictDriverInstallationToAdministrators  REG_DWORD  0x0
     NoWarningNoElevationOnInstall               REG_DWORD  0x1
+    
+# Disable Scored Services if Team is losing (RDP, SMB, PSEXEC, etc)
