@@ -42,7 +42,7 @@ $target = "dc=$word1,dc=$word2,dc=$word3,dc=$word4"
 
 # GPO2: Enable SMB1 Accross the domain and disable SMB2 and SMB3
 New-GPO -name "EnableSMB1" -domain $domainName
-Set-GPRegistryValue -name "EnableSMB1" -key "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters" SMB1 -Type DWORD -Value 1
+Set-GPRegistryValue -name "EnableSMB1" -key "HKLM\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters" -ValueName "SMB1" -Type DWORD -Value 1
 New-GPLink -name "EnableSMB1" -Target $target -LinkEnabled Yes 
 
 # Enable Guest Account
