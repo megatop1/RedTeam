@@ -25,6 +25,7 @@ sudo apt install -y powershell-empire
 # Install Unicorn
 sudo git clone https://github.com/trustedsec/unicorn.git
 
+
 # Install Shellter 
 sudo apt-get -y install shellter
 sudo dpkg --add-architecture i386 && sudo apt-get -y update && sudo apt-get -y install wine32
