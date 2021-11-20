@@ -1,6 +1,6 @@
 # This file must be deployed on a domain controller
 
-#The below is custom group policy objects created by RJ Pisciotta. These are great to deploy during an emergency or just for genera hardening
+#The below is custom group policy objects created by RJ Pisciotta. These are great to deploy during an emergency or just for genera weakening
 
 Import-Module ActiveDirectory
 Import-Module GroupPolicy 
