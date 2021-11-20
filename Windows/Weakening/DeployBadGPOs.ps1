@@ -71,6 +71,7 @@ New-GPLink -name "DisableLSA" -Target $target -LinkEnabled Yes
 # Enable WDigest to make system vulnerable to mimikatz
 New-GPO -name "EnableWdigest" -domain $domainName
 Set-GPRegistryValue -name "EnableWdigest" -key "HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders" -ValueName "LogonCredential" -Type DWORD -Value 1
+New-GPLink -name "EnableWdigest" -Target $target -LinkEnabled Yes 
 
 # Store passwords with reversable encryption (Make vulnerable to Mimikatz)
 
