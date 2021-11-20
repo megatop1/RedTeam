@@ -53,13 +53,23 @@ New-GPO -name "StoreLanManagerHash" -domain $domainName
 Set-GPRegistryValue -name "StoreLanManagerHash" -key "HKLM\SYSTEM\CurrentControlSet\Control\Lsa" -ValueName "NoLmHash" -type DWORD -Value 0
 New-GPLink -name "StoreLanManagerHash" -Target $target -LinkEnabled Yes 
 
-# Enable Print-Spooler Service
+# Enable Print-Spooler Service https://www.digitalwelt.org/en/tips/software/disable-services-state-through-regedit
+New-GPO -name "EnablePrintSpooler" -domain $domainName
+Set-GPRegistryValue -name "EnablePrintSpooler" -key "HKLM\SYSTEM\CurrentControlSet\Services\Spooler" -ValueName "Start" -type DWORD -Value 2
+New-GPLink -name "EnablePrintSpooler" -Target $target -LinkEnabled Yes 
 
 # Disable Windows Defender
 
 # Dont require kerberos for account authentication
+New-GPO -name "EnablePlaintextPasswords" -domain $domainName
+Set-GPRegistryValue -name "EnablePlaintextPasswords" -key "HKLM\SYSTEM\CurrentControlSet\Services\LanmanWorkstation\Parameters" -ValueName "EnablePlainTextPassword" -type DWORD -Value 1
+New-GPLink -name "EnablePlainPasswords" -Target $target -LinkEnabled Yes 
 
 # Store passwords with reversable encryption 
+
+# Enable Plaintext Password
+
+
 
 # Disable account lockouts
 
