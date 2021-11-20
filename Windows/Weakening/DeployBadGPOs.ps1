@@ -50,7 +50,7 @@ New-GPLink -name "EnableSMB1" -Target $target -LinkEnabled Yes
 
 # Enable Windows to Store LAN Manager Hash
 New-GPO -name "StoreLanManagerHash" -domain $domainName
-Set-GPRegistryValue -name "StoreLanManagerHash" -key "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa" -ValueName "NoLmHash" -type DWORD -Value 0
+Set-GPRegistryValue -name "StoreLanManagerHash" -key "HKLM\SYSTEM\CurrentControlSet\Control\Lsa" -ValueName "NoLmHash" -type DWORD -Value 0
 New-GPLink -name "StoreLanManagerHash" -Target $target -LinkEnabled Yes 
 
 # Enable Print-Spooler Service
