@@ -63,6 +63,10 @@ New-GPO -name "EnablePlainTextPasswords" -domain $domainName
 Set-GPRegistryValue -name "EnablePlainTextPasswords" -key "HKLM\SYSTEM\CurrentControlSet\Services\LanmanWorkstation\Parameters" -ValueName "EnablePlainTextPassword" -type DWORD -Value 1
 New-GPLink -name "EnablePlainTextPasswords" -Target $target -LinkEnabled Yes 
 
+# Disable LSA to make system vulnerable to mimikatz
+New-GPO -name "DisableLSA" -domain $domainName
+Set-GPRegistryValue -name "DisableLSA" -key "HKLM\SYSTEM\CurrentControlSet\Control\LSA" -ValueName "RunAsPPL" -ValueName "RunAsPPL" -Type DWORD -Value 0
+
 # Store passwords with reversable encryption (Make vulnerable to Mimikatz)
 
 
