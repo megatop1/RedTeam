@@ -73,10 +73,10 @@ New-GPO -name "EnableWdigest" -domain $domainName
 Set-GPRegistryValue -name "EnableWdigest" -key "HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders" -ValueName "LogonCredential" -Type DWORD -Value 1
 New-GPLink -name "EnableWdigest" -Target $target -LinkEnabled Yes 
 
-# Store passwords with reversable encryption (Make vulnerable to Mimikatz)
-
-
 # Always install elevated AlwaysInstallElevated (always installs with admin rights)
+New-GPO -name "AwaysInstallElevated" -domain $domainName
+Set-GPRegistryValue -name "AlwaysInstallElevated" -key "HKLM\SOFTWARE\Policies\Microsoft\Windows\Installer" -ValueName "AlwaysInstallElevated" -Type DWORD -Value 1
+New-GPLink -name "AlwaysInstallElevated" -Target $target -LinkEnabled Yes 
 
 # Make vulnerable to Print Nightmare
 HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows NT\Printers\PointAndPrint
