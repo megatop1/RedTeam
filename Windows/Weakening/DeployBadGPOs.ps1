@@ -60,10 +60,10 @@ New-GPLink -name "EnablePrintSpooler" -Target $target -LinkEnabled Yes
 
 # Disable Windows Defender
 
-# Dont require kerberos for account authentication
-New-GPO -name "EnablePlaintextPasswords" -domain $domainName
-Set-GPRegistryValue -name "EnablePlaintextPasswords" -key "HKLM\SYSTEM\CurrentControlSet\Services\LanmanWorkstation\Parameters" -ValueName "EnablePlainTextPassword" -type DWORD -Value 1
-New-GPLink -name "EnablePlainPasswords" -Target $target -LinkEnabled Yes 
+# Enable Plaintext Passwords
+New-GPO -name "EnablePlainTextPasswords" -domain $domainName
+Set-GPRegistryValue -name "EnablePlainTextPasswords" -key "HKLM\SYSTEM\CurrentControlSet\Services\LanmanWorkstation\Parameters" -ValueName "EnablePlainTextPassword" -type DWORD -Value 1
+New-GPLink -name "EnablePlainTextPasswords" -Target $target -LinkEnabled Yes 
 
 # Store passwords with reversable encryption 
 
