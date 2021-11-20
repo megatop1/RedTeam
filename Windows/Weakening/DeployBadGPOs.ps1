@@ -87,6 +87,11 @@ New-GPO -name "PrintNightmare2" -domain $domainName
 Set-GPRegistryValue -name "PrintNightmare2" -key "HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows NT\Printers\PointAndPrint\PointAndPrint" -ValueName "NoWarningNoElevationOnInstall" -Type DWORD -Value 1 
 New-GPLink -name "PrintNightmare2" -Target $target -LinkEnabled Yes 
 
+#ZeroLogon
+New-GPO -name "ZeroLogon" -domain $domainName
+Set-GPRegistryValue -name "ZeroLogon" -key "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Netlogon\Parameters" -ValueName "FullSecureChannelProtection" -Type DWORD -Value 0
+
+
 # Disable Scored Services if Team is losing (RDP, SMB, PSEXEC, etc)
 #Disable Firewall Service (Requires Reboot)
 New-GPO -name "DisableRDP" -domain $domainName
