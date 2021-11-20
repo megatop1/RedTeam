@@ -58,20 +58,13 @@ New-GPO -name "EnablePrintSpooler" -domain $domainName
 Set-GPRegistryValue -name "EnablePrintSpooler" -key "HKLM\SYSTEM\CurrentControlSet\Services\Spooler" -ValueName "Start" -type DWORD -Value 2
 New-GPLink -name "EnablePrintSpooler" -Target $target -LinkEnabled Yes 
 
-# Disable Windows Defender
-
 # Enable Plaintext Passwords
 New-GPO -name "EnablePlainTextPasswords" -domain $domainName
 Set-GPRegistryValue -name "EnablePlainTextPasswords" -key "HKLM\SYSTEM\CurrentControlSet\Services\LanmanWorkstation\Parameters" -ValueName "EnablePlainTextPassword" -type DWORD -Value 1
 New-GPLink -name "EnablePlainTextPasswords" -Target $target -LinkEnabled Yes 
 
-# Store passwords with reversable encryption 
+# Store passwords with reversable encryption (Make vulnerable to Mimikatz)
 
-# Enable Plaintext Password
-
-
-
-# Disable account lockouts
 
 # Always install elevated AlwaysInstallElevated (always installs with admin rights)
 
