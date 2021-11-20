@@ -50,10 +50,25 @@ New-GPLink -name "EnableSMB1" -Target $target -LinkEnabled Yes
 
 # Enable Guest Account
 
+# Add guest account to domain admin
+
 # Enable Windows to Store LAN Manager Hash
 
 # Enable Print-Spooler Service
 
 # Disable Windows Defender
 
-#Disable Services such as firewall, 
+# Disable Services such as firewall, 
+
+# Dont require kerberos for account authentication
+
+# Store passwords with reversable encryption 
+
+# Disable account lockouts
+
+# Always install elevated AlwaysInstallElevated (always installs with admin rights)
+
+# Make vulnerable to Print Nightmare
+HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows NT\Printers\PointAndPrint
+    RestrictDriverInstallationToAdministrators  REG_DWORD  0x0
+    NoWarningNoElevationOnInstall               REG_DWORD  0x1
