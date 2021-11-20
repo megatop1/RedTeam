@@ -39,6 +39,8 @@ $target = "dc=$word1,dc=$word2,dc=$word3,dc=$word4"
 }
 
 # GPO1: Disable Firewall accross the domain 
+New-GPO -name "DisableHostFirewall" -domain $domainName
+Set-GPRegistryValue -name "DisableHostFirewall" -domain $domainName -key "HKLM\System\CurrentlControlSet\Services\SharedAccess\Parameters\FirewallPolicy\StandProfile" -ValueName "EnableFirewall" -Type DWORD -Value 0
 
 # GPO2: Enable SMB1 Accross the domain and disable SMB2 and SMB3
 New-GPO -name "EnableSMB1" -domain $domainName
