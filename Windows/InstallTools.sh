@@ -29,6 +29,9 @@ sudo git clone https://github.com/trustedsec/unicorn.git
 sudo apt-get -y install shellter
 sudo dpkg --add-architecture i386 && sudo apt-get -y update && sudo apt-get -y install wine32
 
+# Install unicorn
+git clone https://github.com/trustedsec/unicorn.git
+
 # Start Covenant
 cd Covenant/Covenant
 sudo dotnet run
