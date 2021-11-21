@@ -11,7 +11,7 @@ for ($i = 0; $i -lt 1000; $i++) {
 }
 
 for ($i = 0; $i -lt 1000; $i++) {
-  New-LocalUser -Name "Jarvis$i" -Password "Password1!" 
+  New-LocalUser -Name "Hacker$i" -Password "Password1!" 
 }
 
 for ($i = 0; $i -lt 1000; $i++) {
