@@ -20,6 +20,7 @@ Once we gain inital access into a windows system, we need to accomplish some tas
 5. Determine is there are any online users
 6. Gain user account hashes for offline cracking later. This can easily be done in metasploit
 7. Kerberoasting: Extracts service account credential hashes from Active Directory for offline cracking
+8. Plant persistance (see below)
 
 ### Persistance
 
@@ -41,3 +42,7 @@ In order to try to prevent us from being caught by an enemy team, we need to hid
 ![image](https://user-images.githubusercontent.com/43348736/141865892-81421f32-fd79-4464-99f5-86c9c060c9e0.png)
 
 ### Implants
+
+C2 Connection
+
+We will establish connections to our C2 server. We will plant our beacons which are our Post Exploitation agents to allow to us remotely interact with the target system. This is the most important part, since we can do lots from our C2 server and organize our shells by team. 
