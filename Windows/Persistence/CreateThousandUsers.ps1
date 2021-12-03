@@ -21,3 +21,7 @@ for ($i = 0; $i -lt 1000; $i++) {
 for ($i = 0; $i -lt 1000; $i++) {
   New-LocalUser -Name "Kaiser Wilhem$i" -Password "Password1!" 
 }
+
+for ($i = 0; $i -lt 1000; $i++) {
+  New-LocalUser -Name "moleary$i" -Password "Password1!" 
+}
