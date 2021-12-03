@@ -80,19 +80,23 @@ New-GPLink -name "AlwaysInstallElevated" -Target $target -LinkEnabled Yes
 
 # Make vulnerable to Print Nightmare
 New-GPO -name "PrintNightmare1" -domain $domainName
-Set-GPRegistryValue -name "PrintNightmare1" -key "HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows NT\Printers\PointAndPrint\PointAndPrint" -ValueName "RestrictDriverInstallationToAdministrator" -Type DWORD -Value 0 
+Set-GPRegistryValue -name "PrintNightmare1" -key "HKLM\Software\Policies\Microsoft\Windows NT\Printers\PointAndPrint\PointAndPrint" -ValueName "RestrictDriverInstallationToAdministrator" -Type DWORD -Value 0 
 New-GPLink -name "PrintNightmare1" -Target $target -LinkEnabled Yes 
 
 New-GPO -name "PrintNightmare2" -domain $domainName
-Set-GPRegistryValue -name "PrintNightmare2" -key "HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows NT\Printers\PointAndPrint\PointAndPrint" -ValueName "NoWarningNoElevationOnInstall" -Type DWORD -Value 1 
+Set-GPRegistryValue -name "PrintNightmare2" -key "HKLM\Software\Policies\Microsoft\Windows NT\Printers\PointAndPrint\PointAndPrint" -ValueName "NoWarningNoElevationOnInstall" -Type DWORD -Value 1 
 New-GPLink -name "PrintNightmare2" -Target $target -LinkEnabled Yes 
 
 #ZeroLogon
 New-GPO -name "ZeroLogon" -domain $domainName
-Set-GPRegistryValue -name "ZeroLogon" -key "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Netlogon\Parameters" -ValueName "FullSecureChannelProtection" -Type DWORD -Value 0
+Set-GPRegistryValue -name "ZeroLogon" -key "HKLM\SYSTEM\CurrentControlSet\Services\Netlogon\Parameters" -ValueName "FullSecureChannelProtection" -Type DWORD -Value 0
 New-GPLink -name "ZeroLogon" -Target $target -LinkEnabled Yes
 
 #Disable Right Click
+New-GPO -name "DisableRightClick" -domain $domainName
+Set-GPRegistryValue -name "DisableRightClick" -key "HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" -ValueName "NoViewContextMenu" -Type DWORD -Value 1
+New-GPLink -name "DisableRightClick" -Target $target -LinkEnabled Yes
+
 
 # Disable Scored Services if Team is losing (RDP, SMB, PSEXEC, etc)
 #Disable Firewall Service (Requires Reboot)
