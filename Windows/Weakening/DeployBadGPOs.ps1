@@ -94,7 +94,7 @@ New-GPLink -name "ZeroLogon" -Target $target -LinkEnabled Yes
 
 #Disable Right Click
 New-GPO -name "DisableRightClick" -domain $domainName
-Set-GPRegistryValue -name "DisableRightClick" -key "HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" -ValueName "NoViewContextMenu" -Type DWORD -Value 1
+Set-GPRegistryValue -name "DisableRightClick" -key "HKLM\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" -ValueName "NoViewContextMenu" -Type DWORD -Value 1
 New-GPLink -name "DisableRightClick" -Target $target -LinkEnabled Yes
 
 
