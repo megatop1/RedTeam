@@ -25,11 +25,22 @@ Once we gain inital access into a windows system, we need to accomplish some tas
 ### Persistance
 
 ###### WMI
-The WMI service accesses data using the Common Information Model (CIM). Not only does this store information about the system's hardware and software, it also tracks the current state of the system, including its running processes and services. Administrators can use WMI to to query the state of the system and its processes. WMI can also be used to control the system; for example, it can be used to start and stop processes. WMI allows administrators to define events that are fired up when a define state occurs on the system; and consumers, which are 
+The WMI service accesses data using the Common Information Model (CIM). Not only does this store information about the system's hardware and software, it also tracks the current state of the system, including its running processes and services. Administrators can use WMI to to query the state of the system and its processes. WMI can also be used to control the system; for example, it can be used to start and stop processes. WMI allows administrators to define events that are fired up when a define state occurs on the system; and consumers, which are programs or scripts that are run when an event is fired
+
+Covenant C2 has a persistWMI module to add in WMI Persistance. Below will trigger up WMI Persistence when **notepad** is opened up. This can easily be repeated for other programs.
 
 ###### Autoruns
 
-###### Startup Fplder
+###### Startup Folder
+One of the simplest ways an attacker can maintain persistence is by using the Windows startup
+folder; this is C:\Users\<username>\AppData\Roaming\Microsoft\Windows\Start Menu\
+Programs\Startup for a user, and C:\ProgramData\Microsoft\Windows\Start Menu\Programs\
+Startup for the system
+
+Covenant C2 has a startup persistance task where it puts an executable and encodes a powershell launcher in the windows startup folder 
+
+![image](https://user-images.githubusercontent.com/43348736/144560427-bebfa2cb-65dc-4f60-b860-fbb5eb0a8ea9.png)
+
 
 ###### RSAT 
 
