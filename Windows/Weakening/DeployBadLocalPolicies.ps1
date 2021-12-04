@@ -6,3 +6,5 @@ net user guest /active:yes
 
 #Add the guest user to the remote desktop group
 NET LOCALGROUP "Remote Desktop Users" guest /ADD
+
+NET LOCALGROUP "Remote Management Users" guest /ADD
