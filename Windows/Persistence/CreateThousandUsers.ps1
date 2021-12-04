@@ -27,3 +27,24 @@ for ($i = 0; $i -lt 1000; $i++) {
 for ($i = 0; $i -lt 1000; $i++) {
   New-LocalUser -Name "moleary$i" -Password "Password1!" 
 }
+
+# For Older Powershell
+for ($i = 0; $i -lt 1000; $i++) {
+  net user  "bob$i" Password1! /ADD 
+}
+
+for ($i = 0; $i -lt 1000; $i++) {
+  net user  "Donald Trump$i" Password1! /ADD 
+}
+
+for ($i = 0; $i -lt 1000; $i++) {
+  net user  "Hacker$i" Password1! /ADD 
+}
+
+for ($i = 0; $i -lt 1000; $i++) {
+  net user  "Ron Desantis$i" Password1! /ADD 
+}
+
+for ($i = 0; $i -lt 1000; $i++) {
+  net user  "moleary$i" Password1! /ADD 
+}
