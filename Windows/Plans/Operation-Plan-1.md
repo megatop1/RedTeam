@@ -10,6 +10,7 @@ We can gain initial access to a Windows box using 0-day CVE's. The following are
 If we are unable to exploit our way into the system, then we will have to resort to other methods for initial access.
 - Windows Responder
 - Pass-the-Hash
+- Extortion (This is a joke)
 
 ## Enumeration
 Once we gain inital access into a windows system, we need to accomplish some tasks to get more information about the system. This is called enumeration
