@@ -45,9 +45,6 @@ echo "[payloads$]
    >> /etc/samba/smb.conf
 sudo systemctl restart smbd
 
-# Install unicorn
-sudo git clone https://github.com/trustedsec/unicorn.git
-
 # Start Covenant
-cd Covenant/Covenant
-sudo dotnet run
+#cd Covenant/Covenant
+#sudo dotnet run
