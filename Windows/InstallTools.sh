@@ -37,7 +37,7 @@ sudo apt -y install pip
 sudo pip install -r requirements.txt
 
 # Process Ghosting
-https://github.com/hasherezade/process_ghosting
+sudo git clone https://github.com/hasherezade/process_ghosting
 # Start Covenant
 #cd Covenant/Covenant
 #sudo dotnet run
