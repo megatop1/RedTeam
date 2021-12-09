@@ -45,6 +45,8 @@ echo "[payloads$]
    >> /etc/samba/smb.conf
 sudo systemctl restart smbd
 
+# Process Ghosting
+https://github.com/hasherezade/process_ghosting
 # Start Covenant
 #cd Covenant/Covenant
 #sudo dotnet run
