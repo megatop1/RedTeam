@@ -33,17 +33,8 @@ sudo dpkg --add-architecture i386 && sudo apt-get -y update && sudo apt-get -y i
 # Install nps_payload
 sudo git clone https://github.com/fsacer/nps_payload.git
 cd /opt/nps_payload
+sudo apt -y install pip
 sudo pip install -r requirements.txt
-
-# Set up Samba Share for NPS 
-echo "[payloads$]
-   comment = Dirty Payloads
-   path = /opt/shares/payloads
-   browsable = yes
-   guest ok = yes
-   read only = yes"
-   >> /etc/samba/smb.conf
-sudo systemctl restart smbd
 
 # Process Ghosting
 https://github.com/hasherezade/process_ghosting
