@@ -89,14 +89,21 @@ New-GPLink -name "PrintNightmare2" -Target $target -LinkEnabled Yes
 
 #ZeroLogon
 New-GPO -name "ZeroLogon" -domain $domainName
-Set-GPRegistryValue -name "ZeroLogon" -key "HKLM\SYSTEM\CurrentControlSet\Services\Netlogon\Parameters" -ValueName "FullSecureChannelProtection" -Type DWORD -Value 0
+Set-GPRegistryValue -name "ZeroLogon" -key "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp" -ValueName "UserAuthentication" -Type DWORD -Value 0
 New-GPLink -name "ZeroLogon" -Target $target -LinkEnabled Yes
 
-#Disable Right Click
-New-GPO -name "DisableRightClick" -domain $domainName
-Set-GPRegistryValue -name "DisableRightClick" -key "HKLM\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" -ValueName "NoViewContextMenu" -Type DWORD -Value 1
-New-GPLink -name "DisableRightClick" -Target $target -LinkEnabled Yes
+# Weaken RDP
+New-GPO -name "WeakenRDP" -domain $domainName
+Set-GPRegistryValue -name "WeakenRDP" -key "HKLM\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" -ValueName "NoViewContextMenu" -Type DWORD -Value 1
+New-GPLink -name "WeakenRDP" -Target $target -LinkEnabled Yes
 
+New-GPO -name "WeakenRDP2" -domain $domainName
+Set-GPRegistryValue -name "WeakenRDP" -key "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server" -ValueName "fDenyTSConnections" -Type DWORD -Value 0
+New-GPLink -name "WeakenRDP" -Target $target -LinkEnabled Yes
+
+New-GPO -name "WeakenRDP3" -domain $domainName
+Set-GPRegistryValue -name "WeakenRDP" -key "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server" -ValueName "fSingleSessionPerUser" -Type DWORD -Value 10
+New-GPLink -name "WeakenRDP" -Target $target -LinkEnabled Yes
 
 # Disable Scored Services if Team is losing (RDP, SMB, PSEXEC, etc)
 #Disable Firewall Service (Requires Reboot)
