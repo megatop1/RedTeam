@@ -30,8 +30,23 @@ sudo git clone https://github.com/trustedsec/unicorn.git
 sudo apt-get -y install shellter
 sudo dpkg --add-architecture i386 && sudo apt-get -y update && sudo apt-get -y install wine32
 
+# Install nps_payload
+sudo git clone https://github.com/fsacer/nps_payload.git
+cd /opt/nps_payload
+sudo pip install -r requirements.txt
+
+# Set up Samba Share for NPS 
+echo "[payloads$]
+   comment = Dirty Payloads
+   path = /opt/shares/payloads
+   browsable = yes
+   guest ok = yes
+   read only = yes"
+   >> /etc/samba/smb.conf
+sudo systemctl restart smbd
+
 # Install unicorn
-git clone https://github.com/trustedsec/unicorn.git
+sudo git clone https://github.com/trustedsec/unicorn.git
 
 # Start Covenant
 cd Covenant/Covenant
