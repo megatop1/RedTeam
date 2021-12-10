@@ -6,6 +6,7 @@ We can gain initial access to a Windows box using 0-day CVE's. The following are
 - BlueKeep
 - PrintNightmare
 - ms09_050_smb2_negotiate_func_index (Windows 2008 Only)
+- SMB Ghost (Affects SMB3)
 
 If we are unable to exploit our way into the system, then we will have to resort to other methods for initial access.
 - Windows Responder
