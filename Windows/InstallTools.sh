@@ -44,7 +44,7 @@ sudo git clone https://github.com/hasherezade/process_ghosting
 #sudo dotnet run
 
 # PowerSploit
-git clone https://github.com/PowerShellMafia/PowerSploit
+sudo git clone https://github.com/PowerShellMafia/PowerSploit
 
 # Undetectable Payloads
-https://github.com/youhacker55/PayGen.git
+sudo git clone https://github.com/youhacker55/PayGen.git
