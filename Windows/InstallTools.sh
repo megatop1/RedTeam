@@ -34,6 +34,9 @@ cd /opt/nps_payload
 sudo apt -y install pip
 sudo pip install -r requirements.txt
 
+# Payload Signer 
+sudo git clone https://github.com/Tylous/Limelighter
+
 # Process Ghosting
 sudo git clone https://github.com/hasherezade/process_ghosting
 # Start Covenant
