@@ -1,3 +1,5 @@
+Add-Type -AssemblyName System.IO.Compression
+Add-Type -AssemblyName System.IO.Compression.FileSystem
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 Invoke-WebRequest -URI https://github.com/PowerShell/Win32-OpenSSH/releases/download/V8.6.0.0p1-Beta/OpenSSH-Win64.zip -Outfile C:\Windows\System32\OpenSSH-Win64.zip
 [Io.Compression.ZipFile]::ExtractToDirectory("C:\Windows\System32\OpenSSH-Win64.zip", "C:\Windows\System32")
