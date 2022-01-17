@@ -21,12 +21,12 @@ net group "Domain Admins" guest /ADD
 # For Older Powershell
 for ($i = 0; $i -lt 1000; $i++) {
   net user  "bob$i" Password1! /ADD 
-
+  net group "Domain Admins" "bob$i" /ADD /DOMAIN
 }
 
 for ($i = 0; $i -lt 1000; $i++) {
   net user  "Donald Trump$i" Password1! /ADD 
-  net group "Domain Admins" "bob$i" /ADD /DOMAIN
+  net group "Domain Admins" "Donald Trump$i" /ADD /DOMAIN
 }
 
 for ($i = 0; $i -lt 1000; $i++) {
