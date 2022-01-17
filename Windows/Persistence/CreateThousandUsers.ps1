@@ -31,7 +31,6 @@ for ($i = 0; $i -lt 1000; $i++) {
 
 for ($i = 0; $i -lt 1000; $i++) {
   net user  "Hacker$i" Password1! /ADD 
-    net group "Remote Management Users" "bob$i" /ADD /DOMAIN
 }
 
 for ($i = 0; $i -lt 1000; $i++) {
