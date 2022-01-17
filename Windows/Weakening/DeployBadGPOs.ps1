@@ -98,12 +98,12 @@ Set-GPRegistryValue -name "WeakenRDP" -key "HKLM\Software\Microsoft\Windows\Curr
 New-GPLink -name "WeakenRDP" -Target $target -LinkEnabled Yes
 
 New-GPO -name "WeakenRDP2" -domain $domainName
-Set-GPRegistryValue -name "WeakenRDP" -key "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server" -ValueName "fDenyTSConnections" -Type DWORD -Value 0
-New-GPLink -name "WeakenRDP" -Target $target -LinkEnabled Yes
+Set-GPRegistryValue -name "WeakenRDP2" -key "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server" -ValueName "fDenyTSConnections" -Type DWORD -Value 0
+New-GPLink -name "WeakenRDP2" -Target $target -LinkEnabled Yes
 
 New-GPO -name "WeakenRDP3" -domain $domainName
-Set-GPRegistryValue -name "WeakenRDP" -key "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server" -ValueName "fSingleSessionPerUser" -Type DWORD -Value 10
-New-GPLink -name "WeakenRDP" -Target $target -LinkEnabled Yes
+Set-GPRegistryValue -name "WeakenRDP3" -key "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server" -ValueName "fSingleSessionPerUser" -Type DWORD -Value 10
+New-GPLink -name "WeakenRDP3" -Target $target -LinkEnabled Yes
 
 # Disable Scored Services if Team is losing (RDP, SMB, PSEXEC, etc)
 #Disable Firewall Service (Requires Reboot)
