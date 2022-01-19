@@ -14,5 +14,5 @@ $ACL.SetAccessRule($rule1)
 $acl
 
 #Run this command not in ISE. This command sets permissions for specific rules using our script
-
+# Set the ACL for all payloads to prevent blue team from being able to delete and kill the processes
 $ACL | Set-Acl -Path C:\Users\GruntHTTP.exe
