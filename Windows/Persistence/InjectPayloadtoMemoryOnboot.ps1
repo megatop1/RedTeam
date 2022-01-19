@@ -1,5 +1,5 @@
 # Get PID of first occurence of explorer.exe
-$procid = (get-process explorer).id | Select-Object -First 1
+(get-process explorer).id | Select-Object -First 1 -OutVariable procid
 
 # Find the absolute path to processinjection.exe and store in variable
 $file = 'ProcessInjection.exe'
