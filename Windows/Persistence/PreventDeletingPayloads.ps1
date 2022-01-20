@@ -16,3 +16,44 @@ $acl
 #Run this command not in ISE. This command sets permissions for specific rules using our script
 # Set the ACL for all payloads to prevent blue team from being able to delete and kill the processes
 $ACL | Set-Acl -Path C:\Users\GruntHTTP.exe
+
+# Find all payloads and store in variables 
+$file = 'malware.xml'
+$searchinfolder = 'C:\'
+$malware = Get-ChildItem -path $searchinfolder -filter $file -Recurse | %{$_.FullName}
+$ACL | Set-Acl -Path $malware
+
+$file = 'iexplorerr.exe'
+$searchinfolder = 'C:\'
+$explorer = Get-ChildItem -path $searchinfolder -filter $file -Recurse | %{$_.FullName}
+$ACL | Set-Acl -Path $explorer
+
+$file = 'PowerHell.bat'
+$searchinfolder = 'C:\'
+$hell = Get-ChildItem -path $searchinfolder -filter $file -Recurse | %{$_.FullName}
+$ACL | Set-Acl -Path hell
+
+$file = 'PowerManagement.exe'
+$searchinfolder = 'C:\'
+$power = Get-ChildItem -path $searchinfolder -filter $file -Recurse | %{$_.FullName}
+$ACL | Set-Acl -Path $power
+
+$file = 'VMWareTools.exe'
+$searchinfolder = 'C:\'
+$vmware = Get-ChildItem -path $searchinfolder -filter $file -Recurse | %{$_.FullName}
+$ACL | Set-Acl -Path $vmware
+
+$file = 'DiskHelper.exe'
+$searchinfolder = 'C:\'
+$disk = Get-ChildItem -path $searchinfolder -filter $file -Recurse | %{$_.FullName}
+$ACL | Set-Acl -Path $disk
+
+$file = 'audio.exe'
+$searchinfolder = 'C:\'
+$audio = Get-ChildItem -path $searchinfolder -filter $file -Recurse | %{$_.FullName}
+$ACL | Set-Acl -Path $audio
+
+$file = 'LogMGMT.exe'
+$searchinfolder = 'C:\'
+$logmgmt = Get-ChildItem -path $searchinfolder -filter $file -Recurse | %{$_.FullName}
+$ACL | Set-Acl -Path $logmgmt
