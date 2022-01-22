@@ -1,8 +1,5 @@
 # The following script when scatter all of the payloads to different directories to hide them. Note they can still be tracked down, but its good to not keep all your eggs in one basket. 
 
-# set PWD to C:
-$malware = Get-ChildItem -path $searchinfolder -filter $file -Recurse | %{$_.FullName}
-
 # Find malware.xml 
 $file = 'malware.xml'
 $searchinfolder = 'C:\'
