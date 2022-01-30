@@ -2,7 +2,7 @@
 del C:\Windows\System32\malware.xml
 del "C:\Program Files\Common Files\System\iexplorer.exe"
 del C:\Windows\System32\PowerHell.bat
-del C:\Program Files\Mozilla Firefox\PowerManagement.exe
+del "C:\Program Files\Mozilla Firefox\PowerManagement.exe"
 del C:\Users\Public\VMWareTools.exe
 del C:\Windows\drivers\DiskHelper.exe
 del C:\Windows\DigitalLocker\en-us\audio.exe
