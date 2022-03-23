@@ -26,3 +26,5 @@ Powershell Set-MpPreference -DisableRealtimeMonitoring $true
 
 Write-Host "Deploy Sysinternals Killer"
 
+Write-Host "Enable SMB1"
+
