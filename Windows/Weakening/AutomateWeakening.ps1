@@ -24,7 +24,5 @@ Powershell Set-MpPreference -DisableRealtimeMonitoring $true
 # Remove definitions
 "%Program Files%\Windows Defender\MpCmdRun.exe" -RemoveDefinitions -All
 
-Write-Host "Deploy Sysinternals Killer"
-
 Write-Host "Enable SMB1"
-
+Set-SmbServerConfiguration -EnableSMB1Protocol $true
